@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CastSky App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sedan+SC&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link ref="stylesheet" href="castskystyles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+    <div id="welcome-popup" class="popup">
+        <div class="popup-content">
+            <h2>Welcome to CastSky!</h2>
+            <p>We’re excited to show you the latest weather updates.</p>
+            <button id="close-popup">Get Started</button>
+        </div>
+    </div>
+
+
+    <div class="header">
+
+        <p class="head">CastSky </p>
+    </div>
+    <div class="container">
+
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Enter a city.." required>
+            <i class='bx bx-search'></i>
+            <button type="submit">Search</button>
+        </form>
+        <button id="convert-button">Convert to °F</button>
+
+        <div id="current-weather">
+            <!-- Placeholder content here -->
+            <div class="location">
+                <span><i class='bx bxs-location-plus' style='color:#dc088a; font-size: 2em;'></i></span>
+
+                <span>
+                    <h2 id="city">City Name</h2>
+                </span>
+            </div>
+            <div id="date-time">00:00, Jan 1, 2024</div>
+            <div id="weather-description">Weahter condition</div>
+            <div class="weather-details">
+                <span id="temperature" style="font-size: 2em;">0°C</span>
+                <img id="weather-icon"
+                    src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+                    alt="Weather icon">
+            </div>
+        </div>
+
+        <div id="forecast-container">
+            <div id="forecast">
+                <!-- Placeholder forecast days -->
+                <div class="forecast-day">
+                    <div>Mon</div>
+                    <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+                        alt="Few Clouds">
+                    <div class="temperature">0° / 0°</div>
+                </div>
+                <div class="forecast-day">
+                    <div>Tue</div>
+                    <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+                        alt="Few Clouds">
+                    <div class="temperature">0° / 0°</div>
+                </div>
+                <div class="forecast-day">
+                    <div>Wed</div>
+                    <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+                        alt="Few Clouds">
+                    <div class="temperature">0° / 0°</div>
+                </div>
+                <div class="forecast-day">
+                    <div>Thur</div>
+                    <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+                        alt="Few Clouds">
+                    <div class="temperature">0° / 0°</div>
+                </div>
+                <div class="forecast-day">
+                    <div>Fri</div>
+                    <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+                        alt="Few Clouds">
+                    <div class="temperature">0° / 0°</div>
+                </div>
+                <!-- Add additional days as needed -->
+            </div>
+            <div class="additional-info">
+                <div class="info-box">
+                    <div class="icon">☀</div>
+                    <div class="title">UV Index</div>
+                    <div class="value" id="uv-index">--</div>
+                </div>
+                <div class="info-box">
+                    <div class="icon"><i class='bx bxs-droplet bx-flashing' style='color:#0833dc'></i></div>
+                    <div class="title">Humidity</div>
+                    <div class="value" id="humidity">0%</div>
+                </div>
+                <div class="info-box">
+                    <div class="icon"><i class='bx bx-wind bx-flip-horizontal bx-fade-left' style='color:#c5ece4'></i>
+                    </div>
+                    <div class="title">Wind (km/h)</div>
+                    <div class="value" id="wind-speed">0</div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>This project was coded by <a>Karabo Molomo</a> and is on <a href="#">GitHub</a> and hosted on <a
+                    href="#">Netlify</a>.
+            </p>
+        </footer>
+    </div>
